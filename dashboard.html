@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Css/style.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <header>
+        <a href="Index.html">الكاشير </a>
+        <a href="dashboard.html" class="activ">المشتريات اضافه وحذف وتعديل </a>
+        <a href="#">المبيعات </a>
+        <a href="#">التقرير اليومي</a>
+    </header>
+    <form action="" method="get">
+        <fieldset>
+            <legend>اضافة صنف جديد</legend>
+            <label for="employe">اسم الصنف:</label>
+            <input type="text" id="employe" name="employe" required><br><br>
+            <fieldset class="fieldset_edit">
+                <legend>الكميه</legend>
+                <label>
+                    <input type="radio" name="Add_quantity" value="piece" checked>
+                    بالجرام
+                </label>
+                <label>
+                    <input type="radio" name="Add_quantity" value="grams">
+                    بالقطعه
+                </label>
+                <br><br>
+                <label for="num_piece"> قطعه : </label>
+                <input type="number" id="num_piece" name="numberof_piece" value="0">
+                <br><br>
+                <label for="num_grams"> عددالجرامات : </label>
+                <input type="number" id="num_grams" name="numberof_grams" value=""><br>
+                <label for="num_quantity"> الكميه : </label>
+                <br>
+                <input type="number" id="num_quantity" name="numberof_quantity" value="0"><br><br>
+                <input type="submit" value="اضافة صنف جديد ">
+                <br><br>
+                <input type="text" name="new_item" value=""><br>
+            </fieldset>
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
