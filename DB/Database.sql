@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS CoffeeShopDB;
+
+USE CoffeeShopDB;
+
+
+CREATE TABLE IF NOT EXISTS FoodItems (
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+description VARCHAR(100),
+price DECIMAL(6, 2),
+quantity INT
+);
+
+CREATE TABLE IF NOT EXISTS Drinks (
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+description VARCHAR(100),
+price DECIMAL(6, 2),
+quantity_gram INT
+);
