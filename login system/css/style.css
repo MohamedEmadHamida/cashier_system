@@ -8,6 +8,7 @@
    text-decoration: none;
 }
 
+
 .container{
    min-height: 100vh;
    display: flex;
@@ -30,7 +31,7 @@
    background: crimson;
    color:#fff;
    border-radius: 5px;
-   padding:0 15px;
+   padding:0 15px ;
 }
 
 .container .content h1{
@@ -132,4 +133,5 @@
    border-radius: 5px;
    font-size: 20px;
    padding:10px;
+
 }

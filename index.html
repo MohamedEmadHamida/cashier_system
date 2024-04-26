@@ -23,13 +23,13 @@
                     <legend>قائمة الماكولات والمشروبات</legend>
 
                     <br>
-                    <input type="button" value="المأكولات">
-                    <input type="button" value="المشروبات">
+                    <input type="button" value="المأكولات" id="foodsButton">
+                    <input type="button" value="المشروبات" id="drinksButton">
                     <br>
-                    <textarea name="data" cols="50" rows="15"></textarea>
-            </div>
+                    <div name="data" id="orders" style="height: 500px; width:auto; background-color: white; color:black; padding: 5px">
+
+                    </div>
             </fieldset>
-            <div>
                 <fieldset class="quantity">
                     <legend>الكميه</legend>
                     <input type="button" value="9">
@@ -55,16 +55,19 @@
             <div class="acount-order">
                 <fieldset>
                     <legend>الطلبات / الحساب</legend>
-                    <textarea name="data" cols="50" rows="15"></textarea>
+                    <div name="data" id="bill" style="height: auto; width:auto; background-color: white; color:black; padding: 5px">
+                        
+
+                    </div>
                     <h1>اجمالي الحساب:</h1>
                     <p>0:00</p>
                     <input type="button" value="حذف طلب ">
-                    <input type="button" value=" الغاء الطلب ">ٍ
+                    <input type="button" value=" الغاء الطلب">ٍ
                     <input type="button" value="طلب">ٍ
                 </fieldset>
             </div>
         </form>
-
+    </section>
 
 </body>
 <script src="JS/main.js"></script>
