@@ -32,33 +32,22 @@ a {
   /* end header */
    /* style form  */
    form{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 70%;
-    margin-top: 30PX;
+    margin: 30PX 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    }
-   .list_drinks, .list_food {
-    margin-bottom: 10px;
-}
-   select {
-    background-color: #EAD8C0;
-    color: black;
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #D1BB9E;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 20px;
-}
+
 
     /* style fieldset quantity */
     fieldset {
     border: 1px solid #A79277;
     border-radius: 5px;
     padding: 10px;
+    margin: 20px;
     width: 350px;
+    margin-bottom: 15px;
 }
 
  legend {
@@ -67,23 +56,38 @@ a {
     color: #A79277;
 }
 
-.quantity input[type="button"] {
+ input[type="button"] {
     background-color: #D1BB9E;
     color: white;
-    padding: 10px 15px;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin: 5px;
     font-size: 1em;
-    width: 100px;
+    
     text-align: center;
     font-size: 20;
 }
+.quantity{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+}
+.acount-order h1{
+ color: #A79277;
+  font-size: 30px;
+}
+.acount-order p{
+  color: #A79277;
+  font-size: 40px;
+}
 
-.quantity input[type="button"]:hover {
+input[type="button"]:hover {
     background-color: #A79277;
 }
+
+
   /* style fieldset employee */
  
     label{
@@ -103,18 +107,5 @@ a {
       resize: none;
   }
   
-   input[type="submit"] {
-      background-color: #A79277;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      font-size: 30;
-      font-weight: bold;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-  }
+
   
-  input[type="submit"]:hover {
-      background-color: #D1BB9E;
-  }

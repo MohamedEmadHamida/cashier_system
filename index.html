@@ -1,107 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>cashier system</title>
-        <link rel="stylesheet" href="Css/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cashier system</title>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
 
-    <body>
-        <header>
-            <a href="Index.html" class="activ">الكاشير </a>
-            <a href="dashboard.php">المشتريات اضافه وحذف وتعديل </a>
-            <a href="#">المبيعات </a>
-            <a href="#">التقرير اليومي</a>
-        </header>
-        <section class="form_1">
-            <form action method="get">
-                <div>
-                    <fieldset>
-                        <legend>قائمة الماكولات والمشروبات</legend>
-                        <div class="list_drinks">
-                            <label for="dri">المشروبات</label>
-                            <br>
-                            <select name="drink" id="dri">
-                                <optgroup label="المشروبات الساخنة">
-                                    <option value="شاي">شاي</option>
-                                    <option value="نعناع">نعناع</option>
-                                </optgroup>
-                                <optgroup label="المشروبات البارده">
-                                    <option value="مانجو">مانجو</option>
-                                    <option value="ليمون نعناع">ليمون نعناع
-                                    </option>
-                                </optgroup>
-                            </select>
+<body>
+    <header>
+        <a href="Index.html" class="activ">الكاشير </a>
+        <a href="dashboard.php">المشتريات اضافه وحذف وتعديل </a>
+        <a href="#">المبيعات </a>
+        <a href="#">التقرير اليومي</a>
+    </header>
 
-                        </div>
-                        <div class="list_food">
-                            <label for="dri">المأكولات</label>
-                            <br>
-                            <select name="drink" id="dri">
-                                <optgroup label="الحلو ">
-                                    <option value="تشيز كيك ">تشيز كيك </option>
-                                    <option value="قشطوطة">قشطوطة</option>
-                                </optgroup>
-                                <optgroup label=" الماكولات ">
-                                    <option value="كريب ">كريب </option>
-                                    <option value="شاورما  "> شاورما
-                                        فراخ</option>
-                                    <option value="شاورما  "> شاورما لحم
-                                    </option>
-                                </optgroup>
-                            </select>
+    <section class="form_1">
+        <form action method="get">
+            <div>
+                <fieldset>
+                    <legend>قائمة الماكولات والمشروبات</legend>
 
-                            <textarea name="data" cols="50"
-                                rows="15"></textarea>
-                        </div>
-                    </fieldset>
-                    <fieldset class="quantity">
-                        <legend>الكميه</legend>
-                        <input type="button" value="9">
-                        <input type="button" value="8">
-                        <input type="button" value="7">
-                        <br>
+                    <br>
+                    <input type="button" value="المأكولات">
+                    <input type="button" value="المشروبات">
+                    <br>
+                    <textarea name="data" cols="50" rows="15"></textarea>
+            </div>
+            </fieldset>
+            <div>
+                <fieldset class="quantity">
+                    <legend>الكميه</legend>
+                    <input type="button" value="9">
+                    <input type="button" value="8">
+                    <input type="button" value="7">
+                    <br>
 
-                        <input type="button" value="6">
-                        <input type="button" value="5">
-                        <input type="button" value="4">
-                        <br>
+                    <input type="button" value="6">
+                    <input type="button" value="5">
+                    <input type="button" value="4">
+                    <br>
 
-                        <input type="button" value="3">
-                        <input type="button" value="2">
-                        <input type="button" value="1">
-                        <br>
-                        <input type="button" value="مسح">
-                        <input type="button" value="0">
-                        <br>
-                        <input type="button" value="- -">
-                    </fieldset>
-                </div>
+                    <input type="button" value="3">
+                    <input type="button" value="2">
+                    <input type="button" value="1">
+                    <br>
+                    <input type="button" value="مسح">
+                    <input type="button" value="0">
+                    <br>
+                    <input type="button" value="- -">
+                </fieldset>
+            </div>
+            <div class="acount-order">
+                <fieldset>
+                    <legend>الطلبات / الحساب</legend>
+                    <textarea name="data" cols="50" rows="15"></textarea>
+                    <h1>اجمالي الحساب:</h1>
+                    <p>0:00</p>
+                    <input type="button" value="حذف طلب ">
+                    <input type="button" value=" الغاء الطلب ">ٍ
+                    <input type="button" value="طلب">ٍ
+                </fieldset>
+            </div>
+        </form>
 
-                <div>
-                    <fieldset class="fieldset_employe">
-                        <legend>بحث باستخدام اسم الموظف</legend>
-                        <label for="employe">اسم الموظف:</label>
-                        <input type="text" id="employe" name="employe"
-                            required><br><br>
-                        <textarea name="employe" id cols="20"
-                            rows="5"></textarea>
-                        <br><br>
-                        <label for="account_employe"> رصيد الموظف:</label>
-                        <input type="text" id="account_employe" name="employe"
-                            value="0"><br><br>
-                        <label for="add_employe"> اضافة رصيد الموظف : </label>
-                        <input type="number" id="add_employe" name="employee"
-                            value="0"><br><br>
-                        <input type="submit" value="اضافة رصيد الموظف">
-                    </fieldset>
-                </div>
-            </form>
-        </section>
 
-    </body>
-    <script src="JS/main.js"></script>
+</body>
+<script src="JS/main.js"></script>
 
 </html>
