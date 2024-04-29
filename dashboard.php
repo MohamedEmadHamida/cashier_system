@@ -22,8 +22,8 @@
     <form action="dashboard.php" method="post">
         <fieldset>
             <legend>اضافة صنف جديد</legend>
-            <label for="employe">اسم الصنف:</label>
-            <input type="text" id="ProductName" name="ProductName" required><br><br>
+            <label for="Product_Name">اسم الصنف:</label>
+            <input type="text" id="Product_Name" name="ProductName" required><br><br>
             <fieldset class="fieldset_edit">
                 <legend>الكميه</legend>
                 <label>
@@ -49,7 +49,6 @@
                 <br>
                 <input type="button" value="اضافة صنف جديد ">
                 <br><br>
-
             </fieldset>
         </fieldset>
     </form>
@@ -58,15 +57,14 @@
     // Check if the form is submitted
     if (isset($_POST['button'])) {
         // Retrieve form data
-
-        $employe = $_POST["employe"];
+        $ProductName = $_POST["ProductName"];
         $add_quantity = $_POST["Add_quantity"];
         $numberof_piece = $_POST["numberof_piece"];
         $numberof_grams = $_POST["numberof_grams"];
         $numberof_quantity = $_POST["numberof_quantity"];
         $new_item = $_POST["new_item"];
         // SQL query to insert data into the database
-        $sql = "INSERT INTO !!! (ProductName, add_quantity, numberof_piece, numberof_grams, numberof_quantity, new_item)
+        $sql = "INSERT INTO Add_product (ProductName, add_quantity, numberof_piece, numberof_grams, numberof_quantity, new_item)
             VALUES ('$employe', '$add_quantity', '$numberof_piece', '$numberof_grams', '$numberof_quantity', '$new_item')";
 
         if ($conn->query($sql) === TRUE) {
