@@ -19,7 +19,7 @@
         <a href="#">التقرير اليومي</a>
     </header>
     <!-- addAction.php -->
-    <form action="dashboard.php" method="get">
+    <form action="dashboard.php" method="post">
         <fieldset>
             <legend>اضافة صنف جديد</legend>
             <label for="employe">اسم الصنف:</label>
@@ -56,7 +56,7 @@
     <?php
     include("dbConnection.php");
     // Check if the form is submitted
-    if ($_SERVER["button"] == "POST") {
+    if (isset($_POST['button'])) {
         // Retrieve form data
 
         $employe = $_POST["employe"];
