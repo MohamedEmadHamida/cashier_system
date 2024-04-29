@@ -19,7 +19,6 @@ price DECIMAL(6, 2),
 quantity_gram INT
 );
 
-
 INSERT INTO FoodItems (name, description, price, quantity)
 VALUES ('Sandwich', 'Chicken Sandwich', 5.99, 10),
        ('Salad', 'Caesar Salad', 7.49, 15),
