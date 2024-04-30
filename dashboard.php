@@ -3,10 +3,15 @@
 
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta http-equiv='X-UA-Compatible'
+        content='IE=edge'>
     <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='Css/style.css'>
+    <meta name='viewport'
+        content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet'
+        type='text/css'
+        media='screen'
+        href='Css/style.css'>
     <script src='main.js'></script>
 </head>
 
@@ -14,68 +19,155 @@
 
     <header>
         <a href="Index.html">الكاشير </a>
-        <a href="dashboard.html" class="activ">المشتريات اضافه وحذف وتعديل </a>
+        <a href="dashboard.html"
+            class="activ">المشتريات اضافه وحذف وتعديل </a>
         <a href="#">المبيعات </a>
         <a href="#">التقرير اليومي</a>
     </header>
     <!-- addAction.php -->
-    <form action="dashboard.php" method="post">
+    <form action="dashboard.php"
+        method="post">
         <fieldset>
             <legend>اضافة صنف جديد</legend>
-            <label for="Product_Name">اسم الصنف:</label>
-            <input type="text" id="Product_Name" name="ProductName" required><br><br>
+            <label for="name">اسم الصنف:</label>
+            <!--prodect name-->
+            <input type="text"
+                id="Product_Name"
+                name="ProductName"
+                required><br><br>
             <fieldset class="fieldset_edit">
+
+                <!-- Radio Buttons-->
                 <legend>الكميه</legend>
                 <label>
-                    <input id="piece_radio" type="radio" name="Add_quantity" value="piece" checked onclick="diableJS()">
+                    <input id="piece_radio"
+                        type="radio"
+                        name="Add_quantity"
+                        value="FoodItems"
+                        checked
+                        onclick="diableJS()">
                     بالجرام
                 </label>
                 <label>
-                    <input id="grams_radio" type="radio" name="Add_quantity" value="grams" onclick="diableJS()">
+                    <input id="grams_radio"
+                        type="radio"
+                        name="Add_quantity"
+                        value="Drinks"
+                        onclick="diableJS()">
                     بالقطعه
                 </label>
+                <!-- Radio Buttons-->
+
                 <br><br>
                 <label for="num_piece"> قطعه : </label>
-                <input type="number" id="num_piece" name="numberof_piece" value="0" min="1" max="1000">
+                <input type="number"
+                    id="num_piece"
+                    name="quantity"
+                    value="0"
+                    min="1"
+                    max="1000"
+                    required>
                 <br><br>
+                <!--quantity-->
                 <label for="num_grams"> عددالجرامات : </label>
-                <input type="number" id="num_grams" name="numberof_grams" value="" min="1" max="5000"><br>
-                <label for="num_quantity"> الكميه : </label>
+                <input type="number"
+                    id="num_grams"
+                    name="quantity"
+                    value=""
+                    min="1"
+                    max="5000"
+                    required><br>
                 <br>
-                <input type="number" id="num_quantity" name="numberof_quantity" value="1" min="1" max="1000"><br><br>
+
+                <br><br>
+                <!--price-->
+                <label for="price"> السعر : </label>
+                <input type="number"
+                    id="price"
+                    name="price"
+                    value=""
+                    min="1"
+                    max="5000"
+                    required><br>
                 <br>
-                <textarea rows="4" cols="50" name="new_item" value="" placeholder="الوصف ">
-                    </textarea>
+                <!--description-->
+
+
+
+                <!--description-->
+                <input type="text"
+                    id="description"
+                    name="description"
+                    placeholder="الوصف"
+                    required>
+
                 <br>
-                <input type="button" value="اضافة صنف جديد ">
+                <input type="submit"
+                    name="submit"
+                    value="اضافة صنف جديد ">
                 <br><br>
             </fieldset>
         </fieldset>
     </form>
     <?php
-    include("dbConnection.php");
-    // Check if the form is submitted
-    if (isset($_POST['button'])) {
-        // Retrieve form data
-        $ProductName = $_POST["ProductName"];
-        $add_quantity = $_POST["Add_quantity"];
-        $numberof_piece = $_POST["numberof_piece"];
-        $numberof_grams = $_POST["numberof_grams"];
-        $numberof_quantity = $_POST["numberof_quantity"];
-        $new_item = $_POST["new_item"];
-        // SQL query to insert data into the database
-        $sql = "INSERT INTO Add_product (ProductName, add_quantity, numberof_piece, numberof_grams, numberof_quantity, new_item)
-            VALUES ('$employe', '$add_quantity', '$numberof_piece', '$numberof_grams', '$numberof_quantity', '$new_item')";
 
-        if ($conn->query($sql) === TRUE) {
+
+
+//include connection file with var $mysqli for mysql server connection 
+include("php/conn.php");
+// Check if the form is submitted
+
+   
+if (isset($_POST['submit'])) {
+    // Get data from HTML post 
+    $PName = $_POST["ProductName"];
+    $PQuant = $_POST["quantity"];
+    $PPrice = $_POST["price"];
+    $PDescription = $_POST["description"];
+    $table = $_POST["Add_quantity"];
+
+    // Check for empty fields
+    if (empty($PName) || empty($PQuant) || empty($PPrice) || empty($PDescription)) {
+        if (empty($PName)) {
+            echo ("<font color='red'>اسم الصنف فارغ.</font><br/>");
+        }
+        
+        if (empty($PQuant)) {
+            echo ("<font color='red'>الكمية فارغة.</font><br/>");
+        }
+        
+        if (empty($PPrice)) {
+            echo ("<font color='red'>السعر فارغ.</font><br/>");
+        }
+
+        if (empty($PDescription)) {
+            echo ("<font color='red'>وصف الصنف فارغ.</font><br/>");
+        }
+    } else {
+         
+    
+
+        $sql = "INSERT INTO $table (name, description, price, quantity) 
+        VALUES (' $PName ', '$PDescription', $PPrice,$PQuant)";
+        echo ($sql);
+       
+
+        if ($mysqli->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
 
         // Close connection
-        $conn->close();
+        $mysqli->close();
+
+        
     }
+
+
+
+   
+}
     ?>
     <script src="JS/dashboard.js"></script>
 </body>
