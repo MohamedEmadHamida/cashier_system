@@ -33,12 +33,4 @@ VALUES ('Coffee', 'Espresso', 2.49, 250),
        ('Tea', 'Green Tea', 1.99, 200),
        ('Smoothie', 'Mixed Berry Smoothie', 4.99, 300);
        
-       CREATE TABLE Add_product (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    employe VARCHAR(255) NOT NULL,
-    add_quantity VARCHAR(50) NOT NULL,
-    numberof_piece INT NOT NULL,
-    numberof_grams INT NOT NULL,
-    numberof_quantity INT NOT NULL,
-    new_item TEXT
-);
+    
