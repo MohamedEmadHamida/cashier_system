@@ -38,28 +38,28 @@
             <fieldset class="fieldset_edit">
 
                 <!-- Radio Buttons-->
-                <legend>الكميه</legend>
+                <legend>النوع</legend>
                 <label>
                     <input id="piece_radio"
                         type="radio"
                         name="Add_quantity"
-                        value="FoodItems"
+                        value="Drinks"
                         checked
                         onclick="diableJS()">
-                    بالجرام
+                    مشروبات
                 </label>
                 <label>
                     <input id="grams_radio"
                         type="radio"
                         name="Add_quantity"
-                        value="Drinks"
+                        value="FoodItems"
                         onclick="diableJS()">
-                    بالقطعه
+                    ماكولات
                 </label>
                 <!-- Radio Buttons-->
 
                 <br><br>
-                <label for="num_piece"> قطعه : </label>
+                <label for="num_piece"> عدد الماكولات : </label>
                 <input type="number"
                     id="num_piece"
                     name="quantity"
@@ -69,7 +69,7 @@
                     required>
                 <br><br>
                 <!--quantity-->
-                <label for="num_grams"> عددالجرامات : </label>
+                <label for="num_grams"> عددالمشروبات : </label>
                 <input type="number"
                     id="num_grams"
                     name="quantity"
