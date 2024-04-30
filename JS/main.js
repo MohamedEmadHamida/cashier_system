@@ -1,14 +1,5 @@
 // Orders data
-const ordersData = [
-    { id: "1", name: "بيتزا", price: 10, category: "food" },
-    { id: "2", name: "برجر", price: 5, category: "food" },
-    { id: "3", name: "طعمية", price: 2, category: "food" },
-    { id: "4", name: "كريب", price: 8, category: "food" },
-    { id: "5", name: "سبيرو سباطس", price: 10, category: "drink" },
-    { id: "6", name: "سينا كولا", price: 5, category: "drink" },
-    { id: "7", name: "شنايدر", price: 2, category: "drink" },
-    { id: "8", name: "بشاير", price: 8, category: "drink" }
-];
+ 
 
 // Filter food and drink data
 const foodOrders = ordersData.filter(item => item.category === "food");
@@ -53,25 +44,7 @@ function addBillItemEventListeners() {
     });
 }
 
-// display food orders
-foodsButton.addEventListener("click", function(){
-    orders.innerHTML = foodOrders.map(item => `<div class="foodOrder" data-item-id="${item.id}" style="cursor: pointer; display: flex; justify-content: space-between ;">
-    <p>${item.name}</p> <p>${item.price}</p> </div>`).join("\n");
 
-    // Event listeners for food items
-    document.querySelectorAll('.foodOrder').forEach(orderItem => {
-        orderItem.addEventListener('click', function() {
-            const itemId = this.dataset.itemId;
-            const selectedItem = selectedItems.find(item => item.id === itemId);
-            if (!selectedItem) {
-                selectedItems.push({ ...foodOrders.find(item => item.id === itemId), quantity: 1 });
-            } else {
-                selectedItem.quantity++;
-            }
-            updateBill();
-        });
-    });
-});
 
 // display drink orders
 drinksButton.addEventListener("click", function(){
