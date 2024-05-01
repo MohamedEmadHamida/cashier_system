@@ -1,12 +1,10 @@
 <?php
 
-
-
 //include connection file with var $mysqli for mysql server connection 
 include("php/conn.php");
 // Check if the form is submitted
 
-   
+
 if (isset($_POST['submit'])) {
     // Get data from HTML post 
     $PName = $_POST["ProductName"];
@@ -20,11 +18,11 @@ if (isset($_POST['submit'])) {
         if (empty($PName)) {
             echo ("<font color='red'>اسم الصنف فارغ.</font><br/>");
         }
-        
+
         if (empty($PQuant)) {
             echo ("<font color='red'>الكمية فارغة.</font><br/>");
         }
-        
+
         if (empty($PPrice)) {
             echo ("<font color='red'>السعر فارغ.</font><br/>");
         }
@@ -33,13 +31,13 @@ if (isset($_POST['submit'])) {
             echo ("<font color='red'>وصف الصنف فارغ.</font><br/>");
         }
     } else {
-         
-    
+
+
 
         $sql = "INSERT INTO $table (name, description, price, quantity) 
         VALUES (' $PName ', '$PDescription', $PPrice,$PQuant)";
         echo ($sql);
-       
+
 
         if ($mysqli->query($sql) === TRUE) {
             echo "New record created successfully";
@@ -49,9 +47,5 @@ if (isset($_POST['submit'])) {
 
         // Close connection
         $mysqli->close();
-
-        
     }
-   
 }
-    ?>

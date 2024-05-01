@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="Index.html" class="activ">الكاشير </a>
+        <a href="Index.php" class="activ">الكاشير </a>
         <a href="dashboard.php">المشتريات اضافه وحذف وتعديل </a>
         <a href="#">المبيعات </a>
         <a href="#">التقرير اليومي</a>
@@ -38,16 +38,16 @@
                         include("php/conn.php");
 
                         // Check if the button for المأكولات or المشروبات is clicked
-                        if(isset($_GET['food_items'])) {
+                        if (isset($_GET['food_items'])) {
                             // Fetch data from FoodItems table
                             $result = mysqli_query($mysqli, "SELECT * FROM FoodItems");
-                        } elseif(isset($_GET['drinks'])) {
+                        } elseif (isset($_GET['drinks'])) {
                             // Fetch data from Drinks table
                             $result = mysqli_query($mysqli, "SELECT * FROM Drinks");
-                        } elseif(isset($_GET['search'])) {
+                        } elseif (isset($_GET['search'])) {
                             $search = trim($_GET['search']); // Trim to remove leading/trailing whitespaces
                             if (!empty($search)) {
-                                $result = mysqli_query($mysqli,"SELECT * FROM FoodItems WHERE name LIKE '%$search%' UNION SELECT * FROM Drinks WHERE name LIKE '%$search%'");
+                                $result = mysqli_query($mysqli, "SELECT * FROM FoodItems WHERE name LIKE '%$search%' UNION SELECT * FROM Drinks WHERE name LIKE '%$search%'");
                             } else {
                                 echo "Please enter a search term.";
                             }
@@ -55,12 +55,12 @@
 
 
                         // Check if data is fetched successfully
-                        if($result) {
+                        if ($result) {
                             // Loop through the fetched data and display it
                             while ($res = mysqli_fetch_assoc($result)) {
-                                echo '<div class="foodOrder" data-item-id="'.$res['id'].'" data-item-name="'.$res['name'].'" data-item-price="'.$res['price'].'" style="cursor: pointer; display: flex; justify-content: space-between ;">
-                                        <p>'.$res['name'].'</p> <p>'.$res['price'].'</p>
-                                      </div>';
+                                echo '<div class="foodOrder" data-item-id="' . $res['id'] . '" data-item-name="' . $res['name'] . '" data-item-price="' . $res['price'] . '" style="cursor: pointer; display: flex; justify-content: space-between ;">
+                                        <p>' . $res['name'] . '</p> <p>' . $res['price'] . '</p>
+                                    </div>';
                             }
                         } else {
                             // Display an error message if data fetching fails
@@ -109,7 +109,7 @@
 
     <script>
         // Add event listener to bill items for removal
-        document.getElementById("bill").addEventListener("click", function (event) {
+        document.getElementById("bill").addEventListener("click", function(event) {
             if (event.target && event.target.matches("p")) {
                 const itemPrice = parseFloat(event.target.querySelector(".price").textContent);
                 const quantity = parseInt(event.target.querySelector(".quantity").textContent);
@@ -124,8 +124,8 @@
         const foodOrders = document.querySelectorAll(".foodOrder");
 
         // Add click event listener to each food order item
-        foodOrders.forEach(function (foodOrder) {
-            foodOrder.addEventListener("click", function () {
+        foodOrders.forEach(function(foodOrder) {
+            foodOrder.addEventListener("click", function() {
                 // Get the data attributes
                 const itemId = foodOrder.getAttribute("data-item-id");
                 const itemName = foodOrder.getAttribute("data-item-name");
