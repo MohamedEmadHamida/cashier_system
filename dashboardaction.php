@@ -48,5 +48,4 @@ if (isset($_POST['submit'])) {
         // Close connection
         $mysqli->close();
     }
-}
-header("Location:dashboardaction.php");
+}   

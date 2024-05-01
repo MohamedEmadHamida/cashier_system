@@ -57,4 +57,5 @@ if(isset($_GET['id'])) {
 } else {
     echo "ID not provided.";
 }
+$mysqli->close();
 ?>
