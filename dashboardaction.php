@@ -49,3 +49,4 @@ if (isset($_POST['submit'])) {
         $mysqli->close();
     }
 }
+header("Location:dashboardaction.php");
